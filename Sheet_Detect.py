@@ -29,10 +29,10 @@ CA = (cv2.TERM_CRITERIA_EPS+cv2.TermCriteria_MAX_ITER,20,0.5)
 flags = cv2.KMEANS_RANDOM_CENTERS
 compactness,labels,centers = cv2.kmeans(img_flat,2,None,CA,10,flags)
 img_out = labels.reshape((w,h))
-img_out.astype(np.int16)
-print(type(img_out))
-img_out.astype(np.uint8)
-print(type(img_out))
+img_out = img_out.astype(np.int16)
+print(type(img_out[0][0]),type(labels[0][0]))
+img_out = img_out.astype(np.uint8)
+print(type(img_out[0][0 ]))
 
 plt.imshow(img_out,'gray')
 plt.show()
@@ -40,14 +40,15 @@ plt.show()
 #img = cv2.GaussianBlur(img,(3,3),0)
 #img = cv2.cvtColor(img,cv2.COLOR_RGB2HSV_FULL)
 l = 'git'
-edges = cv2.Canny(img_out,100, 200, apertureSize=3,L2gradient=True)
+edges = cv2.Canny(img_out,0, 1, apertureSize=3,L2gradient=False)
 show_i(edges,'pP'+str(l))
 counters,_ = cv2.findContours(edges,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
-
+print(len(counters))
+img = cv2.cvtColor(img,cv2.COLOR_HSV2RGB_FULL)
 cv2.drawContours(img,counters,-1,(0,0,255))
-## Showing the img 
 show_i(img,'p1')
-show_i(edges,'p2')
+## Showing the img 
+show_i(edges,'edge')
 print(time.time()-t1)
 if cv2.waitKey(0) & 0xff==ord('q'):
     cv2.destroyAllWindows()

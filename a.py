@@ -9,7 +9,7 @@ from skimage import measure,draw
 from skimage.filters import roberts, sobel, scharr, prewitt
 import numpy as np
 
-img = io.imread('p8.jpg')
+img = io.imread('p6.jpg')
 h,w,t = img.shape
 img_s = cv2.resize(img,(w//3,h//3))
 gray_image = cv2.cvtColor(img_s, cv2.COLOR_BGR2GRAY)
@@ -35,16 +35,16 @@ ro = roberts(gray_image)
 #plt.title("2 parts")
 #plt.show()
 print(labels,type(labels[0,0]))
-print(gray_image,type(gray_image[0,0]))
+print(gray_image,type(gray_image[0,0]),'type')
 thresh = cv2.Canny(gray_image, 0, 100)
 print(thresh,type(thresh[0,0]))
-plt.imshow(thresh)
+plt.imshow(thresh,'gray')
 plt.title('t')
 plt.show()
 contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
 best_hull = contours[0]
 for cnt in contours:
-    if cv2.contourArea(cnt)>cv2.contourArea(best_hull):
+    if cv2.arcLength(cnt,True)>cv2.arcLength(best_hull,True):
         best_hull = cnt
 cv2.polylines(img_s, [best_hull, ], True, (0, 0, 255), 2)  # red
 v0 = best_hull[0][0]
