@@ -52,7 +52,7 @@ def line_full():
             x2 = int(ky*x+(1-ky)*x1)
             y2 = int(ky*y+(1-ky)*y1)
             cur_tran[H,a,:]=img[y2,x2,:]
-line_full()
+#line_full()
 print(cur_tran.shape)
 '''
 def line_full(x,y,x1,y1,H):
@@ -83,17 +83,18 @@ print(rect,box)
 dst = cv2.warpPerspective(img, M, (800,800))
 
 
-cv2.drawContours(img_s,[contours[0],],-1,(0,0,255),1)
+cv2.drawContours(img_s,[contours[0],],-1,(0,0,255),3)
 #print(edge_con)
 #cv2.circle(img_s,edge_con[0][0],10,(255,0,0),2)
 cv2.drawContours(img_s,[box,],-1,(0,255,0),1)
 #cv2.polylines(img_s, [box, ], True, (0, 0, 255), 2)  # red
 cv2.namedWindow('box',cv2.WINDOW_FREERATIO)
 
-cv2.imshow('box',cur_tran)
+cv2.imshow('box',img_s)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 #cv2.imwrite('WithLines.png',img_s)
-plt.imshow(cur_tran)
+plt.imshow(img_s)
 plt.show()
-cv2.imwrite('RuledSurface.png',cur_tran)
+#cv2.imwrite('RuledSurface.png',cur_tran) 
+cv2.imwrite('EdgeAndRectangle.png',img_s)
