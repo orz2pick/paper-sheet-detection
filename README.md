@@ -1,30 +1,42 @@
-# paper-sheet-detection
+## paper-sheet-detection
 
-This code can scan a curved edge paper and transfer it into a rectangle sheet.
+# Project introduction
+ This program can scan the paper sheet and transfer it into a **flat rectangle** image by using the information
+from **curved side edges**.
+# How to use it
+  * Put your picture in the same folder with Normal_Warp.py.
+  * Replace the name of your picture of paper sheet with 'p8.jpg' in line 7 of Normal_Warp.py
+  * Run Normal_Warp
+# Requirement
+  * python3
+  * cv2
+  * numba
+  * matplotlib
+  * numpy
+  - - - 
+  
+  # Backgroud
+  The real edge of a document maybe curved rather than straight, so the code will restore a flatter original appearance of the document according to the curved
+edge information of the document.
 
-Let's consider following document.
-<img src="https://b3logfile.com/siyuan/1610205759005/assets/image-20210815154125-whdthe1.png" alt="图片alt" title="图片title">
+# Effect
+  As an example, you can see how my project deal with p8.jpg.
+  
+<figure>
+  
+<img src="EdgeAndRectangle.png"  alt="图片alt" title="Original pic. with marked border"/>
+<img src="After.png"  alt="图片alt" title="By Quadrilateral way"/>
+  <img sec="RuledSurface.png" alt="Ruled" title="By Ruled Surface Model(My project)"/>
+</figure>
 
-And
-<center>
+You can see the four-point perspective transformation preserves the curved characteristics of the paper, while the ruled surface restoration of this project flattens the document in the original image to a certain extent.
 
-        <img style="border - radius:  0.3125em;
+Therefore, if you has a photo of document, with stright upper and down edges, you can use my program to restore your original flat document.
 
-        box - shadow : 0 2px 4px 0 rgba(34, 36,38,.12), 0 2px 10px 0 rgba(34,36,38,.08);"
 
-        src="p8.jpg">
 
-        <br>
 
-        <div style="color:orange; border - bottom: 1px solid #d9d9d9;
 
-         display: inline-block;
-
-          color: #999;
-
-          padding: 2px;">Original Image</div>
-
-</center>
 
 Its edge is curved. Usually the software(IOS, Android) would use circumscribed quadrilateral to approximate the border, and then use warp perspection to transfer the image to a rectangle. This kind of effect is following:
 
