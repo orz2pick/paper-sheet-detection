@@ -3,7 +3,7 @@
 This code can scan a curved edge paper and transfer it into a rectangle sheet.
 
 Let's consider following document.
-<img src="https://b3logfile.com/siyuan/1610205759005/assets/image-20210815154125-whdthe1.png" alt="图片alt" title="图片title")
+<img src="https://b3logfile.com/siyuan/1610205759005/assets/image-20210815154125-whdthe1.png" alt="图片alt" title="图片title">
 
 And
 <center>
