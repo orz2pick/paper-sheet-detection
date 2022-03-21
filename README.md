@@ -21,14 +21,14 @@ edge information of the document.
 
 # Effect
   As an example, you can see how my project deal with p8.jpg.
+  <div>
+<center>
   
-<figure>
-  
-<img src="EdgeAndRectangle.png"  alt="Edged" title="Original pic. with marked border">
-<img src="After.png"  alt="After" title="By Quadrilateral way">
-  <img src="RuledSurface.png" alt="Ruled" title="By Ruled Surface Model(My project)">
-</figure>
-
+<img src="EdgeAndRectangle.png"  alt="Edged" title="Original pic. with marked border" width=150\>
+<img src="After.png"  alt="After" title="By Quadrilateral way" width=150\>
+  <img src="RuledSurface.png" alt="Ruled" title="By Ruled Surface Model(My project)" width=150\>
+</center>
+</div>
 You can see the four-point perspective transformation preserves the curved characteristics of the paper, while the ruled surface restoration of this project flattens the document in the original image to a certain extent.
 
 Therefore, if you has a photo of document, with stright upper and down edges, you can use my program to restore your original flat document.
