@@ -24,9 +24,9 @@ edge information of the document.
   
 <figure>
   
-<img src="EdgeAndRectangle.png"  alt="图片alt" title="Original pic. with marked border"/>
-<img src="After.png"  alt="图片alt" title="By Quadrilateral way"/>
-  <img sec="RuledSurface.png" alt="Ruled" title="By Ruled Surface Model(My project)"/>
+<img src="EdgeAndRectangle.png"  alt="Edged" title="Original pic. with marked border">
+<img src="After.png"  alt="After" title="By Quadrilateral way">
+  <img sec="RuledSurface.png" alt="Ruled" title="By Ruled Surface Model(My project)">
 </figure>
 
 You can see the four-point perspective transformation preserves the curved characteristics of the paper, while the ruled surface restoration of this project flattens the document in the original image to a certain extent.
