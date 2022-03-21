@@ -32,21 +32,3 @@ edge information of the document.
 You can see the four-point perspective transformation preserves the curved characteristics of the paper, while the ruled surface restoration of this project flattens the document in the original image to a certain extent.
 
 Therefore, if you has a photo of document, with stright upper and down edges, you can use my program to restore your original flat document.
-
-
-
-
-
-
-Its edge is curved. Usually the software(IOS, Android) would use circumscribed quadrilateral to approximate the border, and then use warp perspection to transfer the image to a rectangle. This kind of effect is following:
-
-<center>
-
-<figure>
-<img src="EdgeAndRectangle.png" />
-<img src="After.png" />
-</figure>
-
-
-
-<\center>
